@@ -4,7 +4,6 @@ import com.codemos.springitemservice.domain.item.Item;
 import com.codemos.springitemservice.domain.item.ItemRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +35,7 @@ public class BasicItemController {
 
 	@GetMapping("/add")
 	public String addForm() {
-		return "basic/addForm";
+		return "basic/add-form";
 	}
 
 	// @PostMapping("/add")
@@ -99,7 +98,7 @@ public class BasicItemController {
 		Item item = itemRepository.findById(itemId);
 		model.addAttribute("item", item);
 
-		return "basic/editForm";
+		return "edit-form";
 	}
 
 	@PostMapping("/{itemId}/edit")
@@ -114,7 +113,7 @@ public class BasicItemController {
 		Item item = itemRepository.findById(itemId);
 		model.addAttribute("item", item);
 
-		return "basic/deleteForm";
+		return "delete-form";
 	}
 
 	@PostMapping("/{itemId}/delete")
