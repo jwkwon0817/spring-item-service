@@ -98,7 +98,7 @@ public class BasicItemController {
 		Item item = itemRepository.findById(itemId);
 		model.addAttribute("item", item);
 
-		return "edit-form";
+		return "basic/edit-form";
 	}
 
 	@PostMapping("/{itemId}/edit")
@@ -113,7 +113,7 @@ public class BasicItemController {
 		Item item = itemRepository.findById(itemId);
 		model.addAttribute("item", item);
 
-		return "delete-form";
+		return "basic/delete-form";
 	}
 
 	@PostMapping("/{itemId}/delete")
